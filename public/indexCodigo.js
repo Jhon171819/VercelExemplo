@@ -7,7 +7,7 @@ botaoT.addEventListener("click", async () => {
         },
         body: JSON.stringify({ "message":"trocar a palavra" })
     }
-    const response = await fetch("/troca",opcoes);
+    const response = await fetch("/",opcoes);
     response = response.json()
     document.getElementById("amostra").textContent = `${response}`
     

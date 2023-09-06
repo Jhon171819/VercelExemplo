@@ -4,7 +4,7 @@ const { v4 } = require('uuid');
 const port = 3000
 app.use(express.static('public'));
 
-app.post('/troca', (req, res) => {
+app.post('/', (req, res) => {
   const { frase } = req.body;
   res.json({ frase })
 });
