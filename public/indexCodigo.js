@@ -4,8 +4,7 @@ botaoT.addEventListener("click", async () => {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({})
+        }
     }
     const response = await fetch("/",opcoes)
     responsemensagem = await response.json()
