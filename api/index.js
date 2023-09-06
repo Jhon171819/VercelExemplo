@@ -23,7 +23,8 @@ app.post('/api/items', (req, res) => {
 // Rota de exemplo para um endpoint GET
 app.get('/api/items', (req, res) => {
   // Aqui, você normalmente buscaria itens do banco de dados ou de algum local de armazenamento e os retornaria.
-  // Vamos criar um array de exemplo para fins de exemplo.  
+  // Vamos criar um array de exemplo para fins de exemplo. 
+  JSON.stringify(items) 
   res.json(items);
 });
 
