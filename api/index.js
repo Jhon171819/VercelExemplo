@@ -1,30 +1,35 @@
-const express = require('express')
-const app = require('express')();
+const express = require('express');
 const { v4 } = require('uuid');
-const port = 3000
-app.use(express.static('public'));
+
+const app = express();
+app.use(express.static('public'))
+// Configurar middleware para análise do corpo da solicitação como JSON
 app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.json("frase nova");
+const items = [
+    { id: '1', name: 'Item 1' },
+    { id: '2', name: 'Item 2' },
+  ];
+// Rota de exemplo para um endpoint POST
+app.post('/api/items', (req, res) => {
+  const { id, name  } = req.body;
+  // const id = v4();
+  const newItem = { id, name };
+  // Aqui, você normalmente salvaria o newItem em um banco de dados ou em algum local de armazenamento.
+  // Vamos apenas retorná-lo para fins de exemplo.
+  items.push(newItem);
+  res.json(newItem);
 });
 
-app.get('/api', (req, res) => {
-  const path = `/api/item/${v4()}`;
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+// Rota de exemplo para um endpoint GET
+app.get('/api/items', (req, res) => {
+  // Aqui, você normalmente buscaria itens do banco de dados ou de algum local de armazenamento e os retornaria.
+  // Vamos criar um array de exemplo para fins de exemplo.  
+  res.json(items);
 });
 
-app.get('/api/item/:slug', (req, res) => {
-  const { slug } = req.params;
-  res.end(`Item: ${slug}`);
+// Porta em que a API vai ouvir
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`API está ouvindo na porta ${port}`);
 });
-
-
-app.listen(port,() => {
-  console.log(`server rodando na porta ${port}`)
-})
-  
-
-module.exports = app;
