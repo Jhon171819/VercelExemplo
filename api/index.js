@@ -3,10 +3,10 @@ const app = require('express')();
 const { v4 } = require('uuid');
 const port = 3000
 app.use(express.static('public'));
+app.use(express.json());
 
 app.post('/', (req, res) => {
-  const { frase } = req.body;
-  res.json({ frase })
+  res.json("frase nova");
 });
 
 app.get('/api', (req, res) => {
