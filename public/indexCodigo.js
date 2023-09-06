@@ -8,6 +8,6 @@ botaoT.addEventListener("click", async () => {
     }
     const response = await fetch("/",opcoes)
     responsemensagem = await response.json()
-    document.getElementById("amostra").textContent = `${responsemensagem}`
+    document.getElementById("amostra").innerHTML = `${responsemensagem}`
     
 })
