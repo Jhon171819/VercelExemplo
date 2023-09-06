@@ -6,7 +6,7 @@ const opcoes2 = {
         "Content-Type": "application/json"
     }
 }
-function get() {
+async function get() {
     const response = await fetch("/api/items", opcoes2)
     responsemensagem = JSON.stringify(await response.json())
     document.getElementById("amostra").innerHTML = `${responsemensagem}`
