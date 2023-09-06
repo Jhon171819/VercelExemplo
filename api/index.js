@@ -24,7 +24,7 @@ app.post('/api/items', (req, res) => {
 app.get('/api/items', (req, res) => {
   // Aqui, você normalmente buscaria itens do banco de dados ou de algum local de armazenamento e os retornaria.
   // Vamos criar um array de exemplo para fins de exemplo. 
-  JSON.stringify(items) 
+  
   res.json(items);
 });
 
