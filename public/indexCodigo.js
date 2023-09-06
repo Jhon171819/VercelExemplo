@@ -21,7 +21,7 @@ botaoG.addEventListener("click", async () => {
         }
     }
     const response = await fetch("/api/items",opcoes)
-        .then(responsemensagem = await response.json())
-        .then(document.getElementById("amostra").innerHTML = `${responsemensagem}`)
+    responsemensagem = await response.json()
+    document.getElementById("amostra").innerHTML = `${responsemensagem}`
     
 })
