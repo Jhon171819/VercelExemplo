@@ -12,7 +12,9 @@ app.post(url + '/adi', (req, res) => {
   res.json({ resultado });
 });
 
-app.get(url + '/adi', (req,res) => {res.json({ resultado })});
+app.get(url + '/adi', (req,res) => {
+  const resultado = valor1 + valor2;
+  res.json({ resultado })});
 
 app.post(url + '/mult', (req, res) => {
   const { valor1, valor2 } = req.body;
@@ -20,7 +22,11 @@ app.post(url + '/mult', (req, res) => {
   res.json({ resultado });
 });
 
-app.get(url + '/mult', (req,res) => {res.json({ resultado })});
+app.get(url + '/mult', (req,res) => {
+  const resultado = valor1 * valor2;
+  res.json({ resultado })
+  
+  });
 
 app.post(url + '/sub', (req, res) => {
   const { valor1, valor2 } = req.body;
@@ -28,6 +34,7 @@ app.post(url + '/sub', (req, res) => {
   res.json({ resultado });
 });
 app.get(url + '/sub', (req,res) => {
+  const resultado = valor1 - valor2;
   res.json({ resultado });
 });
 app.post(url + '/divs', (req, res) => {
@@ -35,7 +42,10 @@ app.post(url + '/divs', (req, res) => {
   const resultado = valor1 / valor2;
   res.json({ resultado });
 });
-app.get(url + '/divs', (req,res) => {res.json({ resultado })});
+app.get(url + '/divs', (req,res) => {
+  const resultado = valor1 / valor2;
+  res.json({ resultado })
+});
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
