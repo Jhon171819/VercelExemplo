@@ -7,7 +7,7 @@ botaoT.addEventListener("click", async () => {
         }
     }
     const response = await fetch("/",opcoes)
-    responsemensagem = await response.json()
-    document.getElementById("amostra").innerHTML = `${responsemensagem}`
+        .then(responsemensagem = await response.json())
+        .then(document.getElementById("amostra").innerHTML = `${responsemensagem}`)
     
 })
