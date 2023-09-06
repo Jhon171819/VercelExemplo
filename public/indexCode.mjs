@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const somarB = document.getElementById("somar");
     const multB = document.getElementById("mult");
     const subB = document.getElementById("sub");
-    const divB = document.getElementById("div")
+    const divB = document.getElementById("div");
+    const url = "api"
     const opcoes2 = {
         method: "GET",
         headers: {
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     async function get(operacao) {
-        const response = await fetch(`/${operacao}`, opcoes2)
+        const response = await fetch(`api/${operacao}`, opcoes2)
         responsemensagem = JSON.stringify(await response.json())
         document.getElementById("amostra").innerHTML = `${responsemensagem}`
     }
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(valores);
         console.log(opcoes);
         
-        const response = await fetch('/adi', opcoes)
+        const response = await fetch(url + '/adi', opcoes)
         get("adi")
         
     });
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(valores);
         console.log(opcoes);
         
-        const response = await fetch('/mult', opcoes)
+        const response = await fetch(url + '/mult', opcoes)
         get("mult")
     });
 
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(valores);
         console.log(opcoes);
         
-        const response = await fetch('/sub', opcoes)
+        const response = await fetch(url + '/sub', opcoes)
         get("sub")
        
     });
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(valores);
         console.log(opcoes);
         
-        const response = await fetch('/divs', opcoes)
+        const response = await fetch(url + '/divs', opcoes)
         get("divs")
     });
 })
