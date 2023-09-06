@@ -1,7 +1,7 @@
 const botaoT = document.getElementById("troca")
 botaoT.addEventListener("click", async () => {
     const opcoes = {
-        method: "POST",
+        method: "GET",
         headers: {
             "Content-Type": "application/json"
         },
