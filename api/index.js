@@ -5,30 +5,35 @@ const app = express();
 app.use(express.static('public'))
 // Configurar middleware para análise do corpo da solicitação como JSON
 app.use(express.json());
-const items = [
-    { id: '1', name: 'Item 1' },
-    { id: '2', name: 'Item 2' },
-  ];
-// Rota de exemplo para um endpoint POST
-app.post('/api/items', (req, res) => {
-  const { id, name  } = req.body;
-  // const id = v4();
-  const newItem = { id, name };
-  // Aqui, você normalmente salvaria o newItem em um banco de dados ou em algum local de armazenamento.
-  // Vamos apenas retorná-lo para fins de exemplo.
-  items.push(newItem);
-  res.json(newItem);
+app.post('/adi', (req, res) => {
+  const { valor1, valor2 } = req.body;
+  const resultado = valor1 + valor2;
+  res.json({ resultado });
 });
 
-// Rota de exemplo para um endpoint GET
-app.get('/api/items', (req, res) => {
-  // Aqui, você normalmente buscaria itens do banco de dados ou de algum local de armazenamento e os retornaria.
-  // Vamos criar um array de exemplo para fins de exemplo. 
-  
-  res.json(items);
+app.get('/adi', (req,res) => res.json({ resultado }));
+
+app.post('/mult', (req, res) => {
+  const { valor1, valor2 } = req.body;
+  const resultado = valor1 * valor2;
+  res.json({ resultado });
 });
 
-// Porta em que a API vai ouvir
+app.get('/mult', (req,res) => res.json({ resultado }));
+
+app.post('/sub', (req, res) => {
+  const { valor1, valor2 } = req.body;
+  const resultado = valor1 - valor2;
+  res.json({ resultado });
+});
+app.get('/sub', (req,res) => res.json({ resultado }));
+
+app.post('/divs', (req, res) => {
+  const { valor1, valor2 } = req.body;
+  const resultado = valor1 / valor2;
+  res.json({ resultado });
+});
+app.get('/divs', (req,res) => res.json({ resultado }));
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {

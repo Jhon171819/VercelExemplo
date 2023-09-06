@@ -1,17 +1,35 @@
-<html>
-    <head>
+<!-- <!DOCTYPE html> -->
+<html id="container">
+<!-- desenvolvido por Jonathan -->
+<head>
     <meta charset="UTF-8">
-    <title>Troca de texto</title>
-    <link rel="stylesheet" href="IndexVisual.css">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="Client/indexStyle.css">
+    <button onclick="modoClaro()" id="botaoClaro">Modo claro</button>
+    <button onclick="modoEscuro()" id="botaoEscuro">Modo escuro</button>
 </head>
 
 <body id="corpo">
-    <p id="amostra">algo a mostrar</p>
-    <button id="post">post</button>
-    <button id="get">get</button>
-    <script src="indexCodigo.js"></script>
+    <div id="resultado"></div>
+
+    <label for="calculo">
+        <p>
+            Digite o primeiro valor:<br>
+            <input id="valor1" type="number">
+        </p>
+        <p>
+            Digite o segundo valor:<br>
+            <input id="valor2" type="number">
+        </p>
+        <p>
+            <button id="somar">Somar</button>
+            <button id="mult">Multiplicar</button>
+            <button id="sub">Subtrair</button>
+            <button id="div">Dividir</button>
+        </p>
+    </label>
+    <script src="Client/indexCode.mjs">
+    </script>
 </body>
-
-
 
 </html>
