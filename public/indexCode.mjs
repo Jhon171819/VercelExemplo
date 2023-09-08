@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function get(operacao) {
         const response = await fetch(`api/${operacao}`, opcoes2)
         responsemensagem = JSON.stringify(await response.json())
-        console.log(responsemensagem)
-        document.getElementById("amostra").innerHTML = `${responsemensagem}`
+        document.getElementById("resultado").innerHTML = `${responsemensagem}`
     }
 
     function pegarValores() {
