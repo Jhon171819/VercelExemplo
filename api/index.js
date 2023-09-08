@@ -6,33 +6,39 @@ const url = "/api"
 app.use(express.static('public'))
 // Configurar middleware para análise do corpo da solicitação como JSON
 app.use(express.json());
+
+let valores = {}
+let resultado = {}
 app.post(url + '/adi', (req, res) => {
-  const { valor1, valor2 } = req.body;
-  const resultado = valor1 + valor2;
+  valores = req.body;
+  resultado = valores.valor1 + valores.valor2;
   res.json({ resultado });
 });
 
-app.get(url + '/adi', (req,res) => {res.json({ resultado })});
+app.get(url + '/adi', (req,res) => {
+  
+  res.json({ resultado })
+});
 
 app.post(url + '/mult', (req, res) => {
-  const { valor1, valor2 } = req.body;
-  const resultado = valor1 * valor2;
+  valores = req.body;
+  resultado = valores.valor1 * valores.valor2;
   res.json({ resultado });
 });
 
 app.get(url + '/mult', (req,res) => {res.json({ resultado })});
 
 app.post(url + '/sub', (req, res) => {
-  const { valor1, valor2 } = req.body;
-  const resultado = valor1 - valor2;
+  valores = req.body;
+  resultado = valores.valor1 - valores.valor2;
   res.json({ resultado });
 });
 app.get(url + '/sub', (req,res) => {
   res.json({ resultado });
 });
 app.post(url + '/divs', (req, res) => {
-  const { valor1, valor2 } = req.body;
-  const resultado = valor1 / valor2;
+  valores = req.body;
+  resultado = valores.valor1 / valores.valor2;
   res.json({ resultado });
 });
 app.get(url + '/divs', (req,res) => {

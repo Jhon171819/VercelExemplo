@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(opcoes);
         
         const response = await fetch(url + '/adi', opcoes)
-        const data = JSON.stringify(await response.json())
-        document.getElementById("amostra").innerHTML = `${data.resultado}`
         get("adi")
         
     });
