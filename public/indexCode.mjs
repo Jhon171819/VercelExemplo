@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const response = await fetch(url + '/adi', opcoes)
         const data = JSON.stringify(await response.json())
-        document.getElementById("amostra").textContent = `${data.resultado}`
+        document.getElementById("amostra").innerHTML = `${data.resultado}`
         get("adi")
         
     });
