@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return { valor1, valor2 };
     }
     somarB.addEventListener('click', async () =>{
-        const valores = pegarValores(); // Obtenha os valores dos campos aqui
+        const valores = pegarValores(); 
         const opcoes = {
             method: 'POST',
             
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(valores) // Use os valores obtidos aqui
+            body: JSON.stringify(valores) 
         };
         
         const response = await fetch(url + '/adi', opcoes)
