@@ -31,9 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(valores) // Use os valores obtidos aqui
         };
-
-        console.log(valores);
-        console.log(opcoes);
         
         const response = await fetch(url + '/adi', opcoes)
         get("adi")
@@ -50,9 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(valores)
         };
 
-        console.log(valores);
-        console.log(opcoes);
-        
         const response = await fetch(url + '/mult', opcoes)
         get("mult")
     });
@@ -67,8 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(valores)
         };
 
-        console.log(valores);
-        console.log(opcoes);
         
         const response = await fetch(url + '/sub', opcoes)
         get("sub")
@@ -84,9 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(valores)
         };
-
-        console.log(valores);
-        console.log(opcoes);
         
         const response = await fetch(url + '/divs', opcoes)
         get("divs")
